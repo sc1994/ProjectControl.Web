@@ -1,6 +1,4 @@
-﻿using System;
-using System.Web;
-using Microsoft.AspNet.SignalR;
+﻿using Microsoft.AspNet.SignalR;
 using System.Collections.Concurrent;
 using Microsoft.AspNet.SignalR.Hubs;
 
@@ -18,7 +16,7 @@ namespace API.SignalR
         [HubMethodName("send")]
         public void Send(string message)
         {
-            Clients.All.receiveMessage(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Clients.All.message(message);
         }
 
 
