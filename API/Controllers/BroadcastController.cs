@@ -1,7 +1,6 @@
-﻿using System.Threading.Tasks;
-using Common;
-using System.Web.Http;
+﻿using Common;
 using API.SignalR;
+using System.Web.Http;
 
 namespace API.Controllers
 {
@@ -12,7 +11,6 @@ namespace API.Controllers
         {
             Hub.Clients.All.broadcast("1233333");
             return ResponseCode.Success;
-           
         }
     }
 }

@@ -31,11 +31,13 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
+    debugger
     var conn = hubConnection('http://localhost:53590')
     // conn.qs = { "clientName": "" }; todo 设置当前人员
     conn.start()
     var info = conn.createHubProxy('info')
     info.on('broadcast', function(dt, cn, msg) {
+      debugger
       console.log(dt)
     })
     next()
